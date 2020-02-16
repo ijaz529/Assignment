@@ -1,0 +1,44 @@
+Q) Write a python code to print the following pattern:
+
+*
+***
+****
+******
+*******
+*********
+
+#Pseudocode:
+
+a =”*”
+b =”***”
+{
+for i in range( 0 , 3 )
+print ( “a” + “b”*i )
+\n \n	-- 2 break lines after every print to move to the next odd position
+}
+
+“\033[F”
+{
+for j in range(3 , 0)
+
+print (“b” * j)
+“\033[F” 
+“\033[F”   -- Move 2 lines up after every print to to up to the previous even position
+}
+
+#Explaination:
+
+The number of starts (*) in each line are as follows: 1,3,4,6,7,9
+In odd positions, the number of stars are: 1,3,7 
+In even positions, the number of starts are: 3,6,9
+
+Both these follow the pattern (x(n)=x(n-1)+3), ie: add 3 to the previous odd/even position
+
+Assign 1 star (*) to the variable a
+Assign 3 stars (***) to the variable b
+
+For odd positions, 
+print (1 star(*) + (3 stars(***) x 0/1/2)) 
+
+For even positions, 
+print (3 stars (***) x 3/2/1)
